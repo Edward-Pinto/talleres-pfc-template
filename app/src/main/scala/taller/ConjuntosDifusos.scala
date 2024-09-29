@@ -18,7 +18,6 @@ type ConjDifuso = Int => Double
     def interseccion( cd1 : ConjDifuso , cd2 : ConjDifuso ) : ConjDifuso = {
     // Implementaci´on de la funci´on interseccion
 
-    4
     }
     def inclusion ( cd1 : ConjDifuso , cd2 : ConjDifuso ) : Boolean = {
     // Implementaci´on de la funci´on inclusion
