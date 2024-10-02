@@ -5,7 +5,18 @@ package taller
 
 object App {
   def main(args: Array[String]): Unit = {
-    println(greeting())
+     val conjuntosDifusos = new ConjuntosDifusos
+
+    val d = 2
+    val e = 3
+
+    // Creamos el conjunto difuso de números grandes
+    val conjuntoGrandes: conjuntosDifusos.ConjDifuso = conjuntosDifusos.grande(d, e)
+
+    // Verificamos el grado de pertenencia de varios elementos
+    println(s"Grado de pertenencia de 10: ${conjuntosDifusos.pertenece(10, conjuntoGrandes)}")
+    println(s"Grado de pertenencia de 20: ${conjuntosDifusos.pertenece(20, conjuntoGrandes)}")
+    println(s"Grado de pertenencia de 30: ${conjuntosDifusos.pertenece(30, conjuntoGrandes)}")
   }
 
   def greeting(): String = "Hello, world!"
