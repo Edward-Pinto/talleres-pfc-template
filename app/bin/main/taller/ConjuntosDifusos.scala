@@ -13,6 +13,14 @@ class ConjuntosDifusos() {
         
         (n: Int) => Math.pow(n.toDouble / (n + d), e)
     }
+
+    def complemento ( c : ConjDifuso) : ConjDifuso = {
+    // Implementaci´on de la funci´on complemento
+    }
+
+    def union ( cd1 : ConjDifuso , cd2 : ConjDifuso) : ConjDifuso = {
+    // Implementaci´on de la funci´on union
+}
     def interseccion( cd1 : ConjDifuso , cd2 : ConjDifuso ) : ConjDifuso = {
     // Implementaci´on de la funci´on interseccion
 
