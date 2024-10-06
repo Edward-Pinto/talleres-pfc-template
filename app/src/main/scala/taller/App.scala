@@ -5,6 +5,7 @@ package taller
 
 object App {
   def main(args: Array[String]): Unit = {
+
      val conjuntosDifusos = new ConjuntosDifusos
 
     val d = 2
@@ -14,9 +15,23 @@ object App {
     val conjuntoGrandes: conjuntosDifusos.ConjDifuso = conjuntosDifusos.grande(d, e)
 
     // Verificamos el grado de pertenencia de varios elementos
-    println(s"Grado de pertenencia de 10: ${conjuntosDifusos.pertenece(10, conjuntoGrandes)}")
-    println(s"Grado de pertenencia de 20: ${conjuntosDifusos.pertenece(20, conjuntoGrandes)}")
-    println(s"Grado de pertenencia de 30: ${conjuntosDifusos.pertenece(30, conjuntoGrandes)}")
+    println(s"Grado de pertenencia de 10 numeros grandes: ${conjuntosDifusos.pertenece(10, conjuntoGrandes)}")
+
+    //conjunto difuso para numeros mas grandes que 2
+    val conjuntoMayorque2: conjuntosDifusos.ConjDifuso = conjuntosDifusos.muchoMayorQue(2, 5)
+    val conjuntoMayorque3: conjuntosDifusos.ConjDifuso = conjuntosDifusos.muchoMayorQue(3, 8)
+
+    println(s"Grado de pertenencia de 3 del conjunto de numeros mayores que 2 es:: ${conjuntosDifusos.pertenece(3, conjuntoMayorque2)}")
+
+    val conjuntoMayorque2_complemento : conjuntosDifusos.ConjDifuso = conjuntosDifusos.complemento(c = conjuntoMayorque2)
+  
+    println(s"Grado de pertenencia de 3 complemento del conjunto de numeros mayores que 2 es: ${conjuntosDifusos.pertenece(3, conjuntoMayorque2_complemento)}")
+  
+    val conjuntounion : conjuntosDifusos.ConjDifuso = conjuntosDifusos.union(conjuntoMayorque2, conjuntoMayorque3)
+    val conjuntointerseccion : conjuntosDifusos.ConjDifuso = conjuntosDifusos.interseccion(conjuntoMayorque2, conjuntoMayorque3)
+
+    println(s"Union (3)${conjuntosDifusos.pertenece(3, conjuntounion)}")
+    println(s"Interseccion (3)${conjuntosDifusos.pertenece(3, conjuntointerseccion)}")
   }
 
   def greeting(): String = "Hello, world!"
