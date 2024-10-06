@@ -20,6 +20,7 @@ class ConjuntosDifusos() {
 
     def grande(d: Int, e: Int): ConjDifuso = {
         require(d >= 1, "d debe ser mayor o igual a 1")
+        require(e > 1, "e debe ser mayor a 1")
         (n: Int) => Math.pow(n.toDouble / (n + d), e)
     }
 
