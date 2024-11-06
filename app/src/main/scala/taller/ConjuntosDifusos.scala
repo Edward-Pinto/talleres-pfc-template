@@ -40,7 +40,7 @@ class ConjuntosDifusos() {
         @annotation.tailrec
         def aux( x : Int ) : Boolean = {
             if ( x > 100 ) true
-            else if (cd1.pertenece(x) > cd2.pertenece(x)) false
+            else if (cd1(x) < cd2(x)) false
             else aux(x+1)
         }
         aux(0)
